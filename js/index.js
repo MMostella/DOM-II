@@ -169,3 +169,23 @@ window.addEventListener('load', event => {
 
 // Propagation
 
+document.querySelectorAll('*').forEach(item => item.addEventListener('keydown', (event) => {
+    console.log('🎯 :', event.target);
+    console.log('🧭 :', event.currentTarget);
+    console.log('\n');
+}));
+
+zItemDown.addEventListener('keydown', (event) => {
+    console.log('Propagation stopped!');
+    event.stopPropagation();
+})
+
+// Nav links
+
+const navItems = document.querySelector('nav');
+
+// navItems.preventDefault();
+
+document.querySelector("nav").addEventListener("click", function(event) {
+    event.preventDefault();
+}, false);
